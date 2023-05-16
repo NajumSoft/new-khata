@@ -200,6 +200,8 @@
 
 }
 
+
+
 .itemRow {
 
   width: 100%;
@@ -208,7 +210,12 @@
   height: 50px !important;
   padding: 5px;
 }
-
+.itemField{
+  width: 500px !important;
+}
+.descriptionField{
+  width: 500px !important;
+}
 .space {
   width: 100% !important;
 

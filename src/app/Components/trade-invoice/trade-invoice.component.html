@@ -89,29 +89,36 @@
         <div class="invoiceA-detail">
     
           <div class="detail-content">
+            
+
             <div formArrayName="InvoiceDetails" *ngFor="let de of detailArray.controls; let i = index">
               <div class="animate__animated animate__fadeInUp" [formGroupName]="i">
-    
+
     
     
     
     
                 <div class="itemRow">
-                  <p-autoComplete style="width:30%;" field="itemCode" (onSelect)="onItemChange()" placeholder="Item"
-                    [showClear]="true" name="itemCode" [(ngModel)]="selectedItem" [ngModelOptions]="{standalone: true}"
-                    [suggestions]="filterItemList" (completeMethod)="filterItem($event)"></p-autoComplete>
-                  <span class="p-float-label" style="width: 30%;">
-                    <input id="float-input" type="text" pInputText autocomplete="false" placeholder="Description">
-    
-                  </span>
+        <div class="itemField">
+          <p-autoComplete field="itemCode" (onSelect)="setItemId(i)" placeholder="Item"
+          [showClear]="true" name="itemCode" [formControl]="selectedItem"  
+          [suggestions]="filterItemList" (completeMethod)="filterItem($event)"></p-autoComplete>
+        </div>
+        <div class="descriptionField">
+          <span class="p-float-label">
+            <input id="float-input" type="text" pInputText autocomplete="false" placeholder="Description">
+
+          </span>
+        </div>
+             
                   <span class="p-float-label">
-                    <p-inputNumber formControlName="quantity" (onBlur)="calculateBalance(i,qty.value,unitPrice.value)" placeholder="Quanity"  mode="decimal" [minFractionDigits]="0" placeholder="Unit Price" #qty></p-inputNumber>
+                    <p-inputNumber formControlName="quantity" (onBlur)="calculateBalance(i,qty.value,unitPrice.value)" placeholder="Quanity"  mode="decimal" [minFractionDigits]="0" #qty></p-inputNumber>
     
                     <!-- <input id="float-input" type="number" pInputText autocomplete="false" placeholder="Quanity" #qty > -->
     
                   </span>
                   <span class="p-float-label">
-                    <p-inputNumber formControlName="unitRate" (onBlur)="calculateBalance(i,qty.value,unitPrice.value)" mode="decimal" [minFractionDigits]="0" placeholder="Unit Price" #unitPrice></p-inputNumber>
+                    <p-inputNumber formControlName="unitRate" (onBlur)="calculateBalance(i,qty.value,unitPrice.value)" mode="decimal"  placeholder="Unit Price" #unitPrice></p-inputNumber>
                     <!-- <input id="float-input" type="number" pInputText autocomplete="false" placeholder="Unit Price" #unitPrice> -->
     
                   </span>

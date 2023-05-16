@@ -18,7 +18,7 @@ export class TradeInvoiceComponent {
   value1:any;
   value2:any;
   selectedDate:any;
-  selectedItem:any;
+  selectedItem= new FormControl;
   itemsList: any[] = [];
   filterItemList:any;
   autoFieldVisable:boolean = false; 
@@ -189,12 +189,12 @@ this.Invoice_Form.value.InvoiceDetails.forEach((d:any)=>{console.log(d.totalAmou
     return this.fb.group({
       itemId: [],
       itemName: [],
-      uomId:[1],
+      uomId:[],
       serial: [],
       remarks: ['Optional'],
-      quantity: [1, Validators.required],
-      unitRate: [0, Validators.required],
-      totalAmount: [0, Validators.required],
+      quantity: [, Validators.required],
+      unitRate: [, Validators.required],
+      totalAmount: [, Validators.required],
       isCancelled: [false],
     });
   }
@@ -244,6 +244,7 @@ this.Invoice_Form.value.InvoiceDetails.forEach((d:any)=>{console.log(d.totalAmou
     // this.toastr.success('New Row Added');
     this.itemSubscribeForCalculation(index);
     this.currentItemFieldIdIs = this.currentItemFieldIdIs + 1;
+
   }
   deleteItem(i: any) {
     console.log(this.detailArray);
@@ -316,30 +317,33 @@ this.Invoice_Form.value.InvoiceDetails.forEach((d:any)=>{console.log(d.totalAmou
     this.Invoice_Form.get('totalBalanceAmount')?.setValue(balanceAmount);
     console.log(this.Invoice_Form.value);
   }
-  setItemId() {
+  setItemId(currentRowId:any) {
     console.log('itemControlValue Is :');
-    console.log(this.currentItemFieldIdIs);
+    console.log(currentRowId);
+    console.log('this.selectedItem.value :');
+    console.log(this.selectedItem.value);
 
-    console.log(this.itemControl.value.id);
-
-    this.detailArray.controls[this.currentItemFieldIdIs]
+    this.detailArray.controls[currentRowId]
       .get('itemId')
-      ?.setValue(this.itemControl.value.id);
+      ?.setValue(this.selectedItem.value.id);
+      this.detailArray.controls[currentRowId]
+      .get('itemName')
+      ?.setValue(this.selectedItem.value.itemCode);
 
   }
-  grabItemData() {
-    console.log('itemControlValue Is :');
-    console.log(this.currentItemFieldIdIs);
-    console.log(this.itemControl.value.id);
-    this.detailArray.controls[this.currentItemFieldIdIs]
-      .get('itemId')
-      ?.setValue(this.itemControl.value.id);
+  // grabItemData() {
+  //   console.log('itemControlValue Is :');
+  //   console.log(this.currentItemFieldIdIs);
+  //   console.log(this.itemControl.value.id);
+  //   this.detailArray.controls[this.currentItemFieldIdIs]
+  //     .get('itemId')
+  //     ?.setValue(this.itemControl.value.id);
 
-  }
+  // }
   onItemChange(){
-    alert('item changed');
-    console.log(this.selectedItem.itemCode);
-    console.log(this.Invoice_Form.value);
+   
+    // console.log(this.selectedItem.itemCode);
+    // console.log(this.Invoice_Form.value);
     }
   filterItem(e:any){
     let query = e.query;
