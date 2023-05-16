@@ -1,0 +1,85 @@
+
+<form [formGroup]="createPartyForm" >
+  <div class="addParty">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Add Party</h1>
+      </div>
+      <div class="col-md-6 flex justify-content-end">
+        
+        <div class="photo">
+          <img [src]="partyPhoto" alt="" (click)="file.click()">
+          <input accept="jpeg,jpg,png,gif" type="file" hidden #file (change)="onPhotoLoad($event)">
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <!-- <h1>Add Party</h1> -->
+      </div>
+      <div class="col-md-6 flex justify-content-end">
+        Registration Date : {{CurrentDate|date}}
+      </div>
+    </div>
+  
+  
+  
+    <div class="row">
+      <div class="col-md-4 ">
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText formControlName="name">
+          <label for="float-input">Party Name</label>
+        </span>
+      </div>
+      <div class="col-md-4 ">
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText formControlName="mobileNo">
+          <label for="float-input">Mobile Number</label>
+        </span>
+      </div>
+      <div class="col-md-4 ">
+        <span class="p-float-label">
+          <input id="float-input" type="text" pInputText formControlName="cnic">
+          <label for="float-input">CNIC Number</label>
+        </span>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <textarea style="width: 100%;" placeholder="address" [rows]="5" [cols]="30" pInputTextarea
+          [autoResize]="true" ></textarea>
+  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 flex justify-content-between">
+        <p-checkbox class="cursor-pointer" name="groupname" label="Customer" [binary]="true"  formControlName="isCustomer"
+          >
+        </p-checkbox>
+        <p-checkbox class="cursor-pointer" name="groupname" label="Supplier"[binary]="true" formControlName="isSupplier"
+         >
+        </p-checkbox>
+        <p-checkbox class="cursor-pointer" name="groupname" label="Employee" [binary]="true" formControlName="isEmployee"
+          >
+        </p-checkbox>
+        <p-checkbox class="cursor-pointer" name="groupname" label="APAR" [binary]="true" formControlName="apaR_Visibility" > 
+        </p-checkbox>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <br>
+  
+  <hr>
+    <div class="row">
+      <div class="col-md-12 flex justify-content-end">
+        <button (click)="closeDialog()" icon="pi pi-calendar" iconPos="right" pButton label="Cancel" class="p-button-text p-button-danger"></button>
+        &nbsp;
+        <button [disabled]="isBtnDisable" (click)="saveParty()" [icon]="btnIcon" iconPos="right" pButton label="Save Party" class="p-button-raised "></button>
+    
+      </div>
+    </div>
+  </div>
+
+</form>

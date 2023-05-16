@@ -1,5 +1,53 @@
 <!-- <p-megaMenu [model]="items2"></p-megaMenu> -->
-<p-menubar [model]="items"></p-menubar>
+<div class="backgroundImage"></div>
+<p-toast ></p-toast>
+
+
+<!-- <app-side-bar></app-side-bar> -->
+
+<p-dock [model]="dockItems" position="right">
+  <ng-template pTemplate="item" let-item>
+    <img  class="purple p-ripple.purple cursor-pointer"  [src]="item.icon" [alt]="item.label" width="100%">
+  </ng-template>
+</p-dock>
+
+<div #homePage class="homePage">
+  <app-top-navbar></app-top-navbar>
+
+<div class="topNabvarSpacer"></div>
+<p-menubar [model]="items" ></p-menubar>
+  <div class="menubarSpacer"></div>
+
+  <app-trade-invoice></app-trade-invoice>
+
+  <!-- <app-trade-invoice></app-trade-invoice> -->
+<!-- <app-inventory-list></app-inventory-list> -->
+  <!-- <app-cash-transaction></app-cash-transaction> -->
+  <router-outlet></router-outlet>
+<!--   
+  <br><br><br>
+  <i class="fa fa-line-chart" aria-hidden="true"></i>
+  <i class="fa-regular fa-chart-line"></i>
+
+  <i class="fa fa-line-chart" aria-hidden="true"></i>
+
+  <button pButton label="Open Toast" (click)="addSingle()"></button>
+  
+  <p-treeSelect [(ngModel)]="selectedNode" [options]="nodes" placeholder="Select Item"></p-treeSelect> -->
+<!-- <br>
+<br>
+<br>
+  <p-autoComplete placeholder="Party Name" [showClear]="true" [required]="true"  [(ngModel)]="selectedCountries" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)"></p-autoComplete>
+{{selectedCountries}} -->
+
+  <p-contextMenu [target]="homePage" [model]="items"></p-contextMenu>
+
+<!-- {{filteredCountries|json}} -->
+
+</div>
+
+
+
 
 
 <!-- <button class="btn btn-danger">Go</button> -->

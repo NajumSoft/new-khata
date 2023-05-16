@@ -1,0 +1,230 @@
+
+
+<form [formGroup]="Invoice_Form" id="invoiceForm">
+ 
+  <div class="row">
+    
+
+  <div class="col-md-9">
+    <div class="invoiceHeader">
+      <div class="stiching">
+        <div class="d-flex justify-content-between mb-4">
+          <div class="invoiceLabel">
+            
+            <!-- <p class="invoiceType">{{InvoiceType}}</p> -->
+            <p class="invoiceTitle">
+              {{InvoiceType}}  <span>Invoice</span> 
+            </p>
+            <!-- <div class="col-md-3">Invoice #: [ <span>3350</span> ]</div> -->
+          </div>
+          <div class="logo">
+            <img id="logo"
+              src="data:image/jpeg;base64,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"
+              alt="" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <span class="p-float-label">
+              <input id="float-input" type="text" pInputText autocomplete="false" placeholder="Customer Name">
+    
+            </span>
+    
+          </div>
+          <div class="col-md-6">
+            <span class="p-float-label">
+              <input id="float-input" type="text" pInputText autocomplete="false" placeholder="Note">
+    
+            </span>
+            <!-- <span class="p-float-label">
+              <input id="float-input"  type="text" pInputText autocomplete="false" placeholder="Address">
+    
+            </span> -->
+    
+          </div>
+          <div class="col-md-3">
+            <p-calendar (onSelect)="onDateChange()" [(ngModel)]="selectedDate" [ngModelOptions]="{standalone: true}"
+              dateFormat="dd.mm.yy" placeholder="Date" [showTime]="true" [hourFormat]="'12'"></p-calendar>
+    
+          </div>
+        </div>
+        <br>
+        <div class="row">
+    
+    
+            <!-- <p-inputMask [(ngModel)]="mobineNumber" mask="9999-9999999" placeholder="Mobile Number"></p-inputMask> -->
+          
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+
+    <div class="invoiceStatus">
+    <div class="stiching">
+
+      <p>Total Amount</p>
+      <p>Discount Amount</p>
+      <p>Total Amount</p>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-9">
+    <div class="invoiceDetail">
+      <div class="row detail-top">
+        <p>Invoice Details</p>
+          </div>
+      <div class="stiching mt-3">
+    
+    
+    
+    
+        <!-- ----------  Detail Area  ---------- -->
+    
+        <div class="invoiceA-detail">
+    
+          <div class="detail-content">
+            <div formArrayName="InvoiceDetails" *ngFor="let de of detailArray.controls; let i = index">
+              <div class="animate__animated animate__fadeInUp" [formGroupName]="i">
+    
+    
+    
+    
+    
+                <div class="itemRow">
+                  <p-autoComplete style="width:30%;" field="itemCode" (onSelect)="onItemChange()" placeholder="Item"
+                    [showClear]="true" name="itemCode" [(ngModel)]="selectedItem" [ngModelOptions]="{standalone: true}"
+                    [suggestions]="filterItemList" (completeMethod)="filterItem($event)"></p-autoComplete>
+                  <span class="p-float-label" style="width: 30%;">
+                    <input id="float-input" type="text" pInputText autocomplete="false" placeholder="Description">
+    
+                  </span>
+                  <span class="p-float-label">
+                    <p-inputNumber formControlName="quantity" (onBlur)="calculateBalance(i,qty.value,unitPrice.value)" placeholder="Quanity"  mode="decimal" [minFractionDigits]="0" placeholder="Unit Price" #qty></p-inputNumber>
+    
+                    <!-- <input id="float-input" type="number" pInputText autocomplete="false" placeholder="Quanity" #qty > -->
+    
+                  </span>
+                  <span class="p-float-label">
+                    <p-inputNumber formControlName="unitRate" (onBlur)="calculateBalance(i,qty.value,unitPrice.value)" mode="decimal" [minFractionDigits]="0" placeholder="Unit Price" #unitPrice></p-inputNumber>
+                    <!-- <input id="float-input" type="number" pInputText autocomplete="false" placeholder="Unit Price" #unitPrice> -->
+    
+                  </span>
+    
+    
+                  <span class="p-float-label">
+                    <!-- <p-inputNumber mode="decimal" [minFractionDigits]="2" placeholder="Balance" [value]="calculateBalance(qty.value,unitPrice.value)"></p-inputNumber> -->
+                    <input formControlName="totalAmount" [disabled]="true" id="float-input"  type="text" pInputText autocomplete="false" placeholder="Balance"  >
+    
+                  </span>
+                  <div class="actionBtn">
+                    <mat-icon *ngIf="i > 0" id="deleteButton" class="actionButtonWidthHight" aria-hidden="false" aria-label="Example home icon"
+                      (click)="deleteItem(i)">delete</mat-icon>
+                      
+                    <div *ngIf="i <= 0" id="addSerial" class="actionButtonWidthHight" (click)="addRow(i)">+</div>
+                  </div>
+                </div>
+    
+    
+    
+    
+              </div>
+            </div>
+          </div>
+          <hr>
+    
+        </div>
+    
+        <!-- ----------- Actions Area ------------- -->
+        <!-- <div class="amountArea">
+          <div class="row ">
+            <div class="col-md-7"></div>
+            <div class="col-md-5">
+              <div class="col-md-12">
+                <div class="grandFields">
+                  <div>
+                    <p>Total Billed Amount : </p>
+                  </div>
+                  <div>
+                    <mat-form-field>
+                      <p>{{value1}}</p>
+                      <mat-label>Amount</mat-label> 
+                      <input [hidden]="true" type="number" matInput placeholder="Biller Amount"
+                        />
+                    </mat-form-field>
+                  </div>
+    
+    
+                </div>
+              </div>
+    
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-md-5">
+              <div class="col-md-12">
+                <div class="grandFields">
+                  <div>
+                    <p>Received Amount : </p>
+                  </div>
+                  <div>
+                    <mat-form-field>
+                       <mat-label>Amount</mat-label> 
+                      <input type="number" matInput placeholder="Received Amount" (blur)="receivedAmount()"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-md-5">
+              <div class="col-md-12">
+                <div class="grandFields">
+                  <div>
+                    <p>Total Billed Amount : </p>
+                  </div>
+                  <div>
+                    <mat-form-field>
+                      <p>{{Invoice_Form.value.totalBalanceAmount}}</p>
+                      <input [hidden]="true" type="number" matInput placeholder="Balance Amount" [value]="5564"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="actionArea">
+          <div class="row">
+            <div class="col-md-12">
+              <p>{{value1}}</p>
+              <button mat-raised-button color="primary" (click)="submit()">
+                {{ BtnText }}
+              </button>
+            </div>
+          </div>
+        </div>
+    
+    
+    
+      </div>
+    
+    </div>
+    
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+
+
+</form>

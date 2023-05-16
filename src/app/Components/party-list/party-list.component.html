@@ -1,0 +1,61 @@
+<div class="partyList">
+<ng-container *ngIf="partyList.length > 0; then thenTemplate; else elseTemplate"></ng-container>
+<ng-template #thenTemplate>
+
+        <p-table [value]="partyList" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width:5%">Id</th>
+                    <th style="width:20%">Name</th>
+                    <th style="width:10%">Mobile Number</th>
+                    <th style="width:45%">Remarks</th>
+                    <th style="width:5%">APAR</th>
+                    <th style="width:5%">Customer</th>
+                    <th style="width:5%">Supplier</th>
+                    <th style="width:5%">Employee</th>
+                    <!-- <th style="width:25%">Representative</th> -->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-party>
+                <tr>
+                    <td>{{party.id}}</td>
+                    <td>{{party.name}}</td>
+                    <td>{{party.mobileNo}}</td>
+                    <td>{{party.mobileNo}}</td>
+                    <td>{{party.apaR_Visibility}}</td>
+                    <td>{{party.isCustomer}}</td>
+                    <td>{{party.isSupplier}}</td>
+                    <td>{{party.isEmployee}}</td>
+                    <!-- <td>{{customer.country.name}}</td>
+                    <td>{{customer.company}}</td>
+                    <td>{{customer.representative.name}}</td> -->
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ng-template>
+<ng-template #elseTemplate>
+    <div class="center">
+        <i class=" pi pi-spin pi-spinner"></i>
+    </div>
+
+   
+</ng-template>
+</div>

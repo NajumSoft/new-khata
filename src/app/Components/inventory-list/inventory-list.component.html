@@ -1,0 +1,218 @@
+
+
+
+
+<div class="inventoryTable ">
+   
+   
+    <!-- <div class="topRow">
+      <div class="topRow-left desirtBg">
+        <mat-form-field appearance="fill">
+          <mat-label>Inventory Type</mat-label>
+          <mat-select>
+      <mat-option  *ngFor="let invType of listInventoryTypes" [value]="invType.Value" >
+              {{invType.name}}
+            </mat-option> 
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="topRow-center desirtBg">
+    
+       <div class="searchBar">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Party Search</mat-label>
+            <input type="text" placeholder="Search Party here..." aria-label="Number" matInput [formControl]="autoFormControl"
+              [matAutocomplete]="auto">
+              
+            <mat-icon  (click)="clearSearchForm()" matSuffix class="clearIcon">clear</mat-icon>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayitemName">
+        
+              <mat-option *ngFor="let option of itemFilteredOptions" [value]="option">
+                {{displayitemName(option)}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+      
+          <button color="primary" mat-raised-button (click)="search()">Search </button>
+        </div> 
+    
+    
+      </div>
+      <div class="topRow-right desirtBg">
+        <div class="totalValueOfInventory">
+          <p class="inv-title">Total Inventory</p>
+       <p class="inv-figure">Rs {{totalOfInventory}}</p> 
+        </div>
+      </div>
+    </div>
+     -->
+    
+    
+        
+    
+        
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    
+    <div class="inventoryHeader-row ">
+        <p class="minWidth150">Prduct Image</p> 
+        <p class="minWidth250">Product Name</p>
+        <p class="minWidth150">Sub Inventory</p>  
+        <p class="minWidth150">Locator</p>
+        <!-- <p>Lots</p> -->
+    
+       
+        <p class="minWidth150">Quanity</p>
+        <p class="minWidth150">Avg Cost</p>
+        <p class="minWidth150">Total Value</p>
+    
+      </div>
+    
+    
+    
+      <div class="inventoryDetail-row"
+      *ngFor="let inv of inventoryList" (click)="inventoryItemDetailView(inv)">
+        <div class="d-flex align-items-center">
+          <!-- <div class="indicator">
+            <div></div>
+          </div> -->
+          <div class="minWidth150">
+          <div class="productImg">
+    
+            <img [src]="baseUrl+inv.thumbnailURL" alt="">
+          </div>
+        </div>
+    
+        </div>
+        <div class="productName minWidth250">
+          <p>{{inv.itemCode}}</p>
+          <p>{{inv.quantity >0 ?? '"Available":"Out Of Stock"'}}</p>
+        </div>
+        <div class="subInventory minWidth150">
+          <p>Store</p>
+          <p></p>
+        </div>
+        <div class="locator text-truncate minWidth150">
+          <p>DA</p>
+          <p>Sherameen</p>
+        </div>
+    
+     
+        <div class="inStock minWidth150">
+          <div class="inStockValue"><span>{{inv.quantity}}</span>/994 <span class="unitOf">{{inv.unit}}</span></div>
+          <div class="inStockBar">
+            <div></div>
+          </div>
+        </div>
+        <div class="avgCost minWidth150">
+          <p>{{inv.avgCost}}</p>
+        </div>
+        <div class="totalValue minWidth150">
+          <p>{{inv.totalValue}}</p>
+        </div>
+        <!-- <div class="lot"></div> -->
+        
+    
+      </div>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- 
+    <div class="inventoryPage">
+    
+    
+    
+    
+    
+    
+      <div class="container-fluid">
+        <div class="row">
+    
+          <div class="col-md-12">
+    
+            <div class="tableCover animate__animated animate__zoomIn animate__faster">
+    
+    
+              <table>
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Locator</th>
+                    <th>Item</th>
+                    <th>U.O.M</th>
+                    <th>Qty</th>
+                    <th>Avg. Cost</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let inv of inventoryData">
+                    <td>
+                      <div class="ProductAvatar">
+                        <img src="../../../assets/Images/personPlaceholder.jpg" alt="">
+                      </div>
+                    </td>
+                    <td>Darra</td>
+                    <td>
+                      {{inv.itemCode}}
+                    </td>
+                    <td>{{inv.unit}}</td>
+                    <td>
+                      {{inv.quantity}}
+                    </td>
+                    <td>
+                      {{inv.avgCost}}
+                    </td>
+                    <td>{{inv.totalValue}}</td>
+                  </tr>
+    
+                </tbody>
+              </table>
+    
+    
+    
+            </div>
+          </div>
+          <div class="col-md-3">
+    
+            <div class="i-card animate__animated animate__zoomIn animate__faster">
+    
+              <div class="i-card-title">total Inventory</div>
+              <div class="i-card-content">
+                4000,000
+              </div>
+              <div class="i-card-footer">
+                <p>footer</p>
+              </div>
+    
+            </div>
+    
+    
+    
+    
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    </div> -->
+    

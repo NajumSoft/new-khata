@@ -1,7 +1,205 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+body { margin: 0; 
+    font-family: 'work sans', "Helvetica Neue", sans-serif
+    ;
+   
+    //opacity: .2;
+    //backdrop-filter: blur(10px);
+ }
+@import '~primeicons/primeicons.css';
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+
+.p-dock-list-container{
+    position: fixed;
+    right: 0;
+    background-color: rgba(255, 254, 255, 0.2);
+    border: 1px solid #e1e1e1;
+    border-radius: 25px 0 0 25px;
+}
+.p-dock .p-dock-list{
+    background: none !important;
+    border: none !important;
+}
+.p-dialog{
+    box-shadow: none !important;
+}
+.p-dialog .p-dialog-header{
+    padding: 0 !important;
+    display: none !important;
+    background-color: transparent !important;
+}
+.p-dialog .p-dialog-content{
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+.p-autocomplete-input ,.p-inputtext{
+    width: 100% !important;
+}
+.p-autocomplete.p-autocomplete-clearable .p-inputtext{
+    width: 100% !important;
+}
+.p-treeselect,.p-calendar,.p-dropdown,.p-autocomplete{
+    width: 100% !important;
+}
+.p-tree{
+    padding: 5px !important;
+    width: 300px !important;
+}
+
+@media screen and (min-width: 500px){
+    .p-menubar {
+      // background-color: red !important;
+      // color: red  !important;
+        height: 40px !important;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+
+    }
+    .p-menuitem{
+        height: 40px !important;
+        
+    }
+    .p-menuitem > .p-menuitem-link{
+        height: 40px !important;
+    }
+
+}
+
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+  }
+
+
+  mat-form-field{
+    width: 100% !important;
+   
+    //border: 1px solid blue;
+}
+.mat-dialog-container {
+     box-shadow: none; 
+     background-color: rgba(255, 255, 255, 0);
+     padding: 0 !important;
+     color: rgba(255, 255, 255, 0);
+    
+
+     
+}
+.p-inputtext {
+    background-color: #b000b00a !important;
+    margin: 0 !important;
+    border: 1px solid #ffffff !important;
+  }
+  
+
+.mat-autocomplete-panel.mat-autocomplete-visible {
+    margin-top: 10px;
+    visibility: visible;
+    border-radius: 10px;
+
+    background-color: rgb(255, 255, 255);
+  }
+
+
+  ::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: red!important;
+}
+
+//input outline color
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: red!important;
+    // opacity: 1!important;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: red!important;
+}
+
+// mat-input error outline color
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+    color: red!important;
+    opacity: 0.8!important;
+}
+
+// mat-input carent color
+::ng-deep .mat-input-element {
+    caret-color: red!important;
+}
+
+// mat-input error carent color
+::ng-deep .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
+    caret-color: red!important;
+}
+
+// mat-label normal state style
+::ng-deep .mat-form-field-label {
+    color: rgba(0,0,0,.6)!important;
+    // color: $mainColor!important;
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: red!important;
+}
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: red!important;
+}
+
+// Primeng Custom Css
+.p-inputtext:enabled:focus {
+    outline: 0 none !important;
+    outline-offset: 0 !important;
+    box-shadow: 0 0 5px 5px rgb(192 0 255 / 14%) !important;
+    border-color: #dfbdde !important;
+  }
+ .p-inputtext:enabled:hover {
+    border-color: #e1e1e1 !important;
+  }
+  .p-inputtext {
+    background-color: #b000b00a !important;
+    margin: 0 !important;
+    border: 1px solid #ffffff !important;
+    font-family: 'work sans';
+    font-size:18px !important;
+    height: 40px !important;
+    color: #666 !important;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #666 !important;
+    opacity: 1 !important;
+    font-size:18px !important; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #666 !important;
+    font-size:18px !important;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #666 !important;
+    font-size:18px !important;
+  }

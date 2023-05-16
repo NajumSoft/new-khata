@@ -1,0 +1,257 @@
+#invoiceForm{
+  max-width: 1500px;
+  margin: 10px auto;
+}
+.invoiceHeader {
+
+  box-shadow: 0px 0px 50px rgba(93, 4, 152, 0.2);
+ // max-width: 1000px;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  transition: all .3s;
+  border: 1px solid #f5f5f5;
+  font-family: work sans !important;
+  margin: 10px auto;
+  transition: all .3s ease-in-out;
+
+}
+.invoiceStatus{
+  margin: 10px auto;
+  background-color: white;
+  box-shadow: 0px 0px 50px rgba(93, 4, 152, 0.2);
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+.invoiceHeader:hover {
+  //transform: scale(1.01);
+  box-shadow: 0px 0px 50px rgba(152, 4, 147, 0.2);
+}
+
+.stiching {
+  // margin: 5px;
+  // padding: 5px;
+  border-radius: 4px;
+  border: 2px dashed #e1e1e1;
+  padding: 10px;
+}
+
+
+.invoiceDetail {
+  margin: 0px auto;
+  box-shadow: 5px 5px 50px rgba(93, 4, 152, 0.2);
+  //max-width: 1000px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  transition: all .3s;
+  border: 1px solid #f5f5f5;
+  font-family: work sans !important;
+  position: relative;
+}
+
+.invoiceDetail:hover {
+
+  box-shadow: -10px -10px 50px rgba(93, 4, 152, 0.2);
+
+
+}
+
+.invoiceTitle {
+  font-weight: 600;
+  font-size: 40px;
+  color: rgb(161, 3, 161);
+  margin-top: 10px;
+}
+.invoiceTitle span{
+
+}
+
+.invoiceType {
+  font-weight: 500;
+  font-size: 30px;
+  color: rgb(176, 0, 176);
+}
+
+
+
+
+.detail-top {
+  background-color: rgb(255, 255, 255);
+  width: 180px;
+  height: 30px;
+  left: 30px;
+  top: 15px;
+  font-family: work sans;
+  font-size: 20px;
+  //border-radius: 12.5px;
+ // border: 1px solid red;
+  display: flex !important;
+  justify-content:center !important;
+  align-items: center !important;
+  position: absolute;
+
+}
+
+.detail-content {
+
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.detail-footer {
+  background-color: rgb(230, 230, 230);
+  width: 100%;
+  height: 30px;
+  border-radius: 12.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center !important;
+}
+
+.actionArea {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: end;
+}
+
+#deleteButton {
+  color: rgb(184, 4, 4);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+#deleteButton:hover {
+  transform: scale(1.2);
+  //color: rgb(247, 12, 12);
+}
+
+#deleteButton:active {
+  transform: scale(0.9);
+  //color: rgb(247, 12, 12);
+}
+#addSerial {
+  color: rgb(11, 105, 34);
+  cursor: pointer;
+  transition: all .3s;
+  font-size: 16px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 26px;
+
+
+}
+
+#addSerial:hover {
+  color: rgb(5, 33, 126);
+  transform: scale(1.1);
+
+}
+
+#logo {
+  width: 80px;
+
+}
+
+.actionBtn {
+  //border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 50px !important;
+  height: 50px !important;
+ 
+}
+.actionButtonWidthHight {
+  width: 40px !important;
+  height: 40px !important;
+
+}
+.actionBtn mat-icon {
+  //border: 1px solid red;
+  //background-color: rgba(231, 231, 231, 0.1);
+
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  transition: all .2s;
+}
+
+.actionBtn ,.actionButtonWidthHight mat-icon:hover {
+  //border: 1px solid red;
+  transform: scale(1.1);
+  cursor: pointer;
+
+}
+
+.actionBtn ,.actionButtonWidthHight mat-icon:active {
+  //border: 1px solid red;
+  transform: scale(.9);
+
+}
+
+.itemRow {
+
+  width: 100%;
+  // border: 1px solid blue;
+  display: flex;
+  height: 50px !important;
+  padding: 5px;
+}
+
+.space {
+  width: 100% !important;
+
+}
+
+mat-form-field {
+  font-size: 11px !important;
+  margin-left: 2px;
+  margin-right: 2px;
+  height: 50px !important;
+  // border: 1px solid black;
+}
+
+.grandFields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //border: 4px solid blue;
+  margin-top: 5px;
+  height: 50px !important;
+  font-size: 15px;
+}
+
+.grandFields div:nth-child(1) {
+  color: #666;
+  // border: 2px solid red;
+  width: 50% !important;
+}
+
+.grandFields div:nth-child(2) {
+  //  border: 2px solid green;
+  width: 50% !important;
+}
+
+.row {
+  margin: 0 !important;
+
+}
+
+.mat-form-field-flex {
+  // display: inline-flex;
+  // align-items: baseline;
+  // box-sizing: border-box;
+  // width: 100%;
+  // height: 30px !important;
+}

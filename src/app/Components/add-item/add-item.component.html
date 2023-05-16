@@ -1,0 +1,83 @@
+<form  (ngSubmit)="submitCreateItemForm()">
+<div class="addItem">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Add Item</h1>
+    </div>
+    <div class="col-md-6 flex justify-content-end">
+      <div class="photo">
+        <img [src]="itemPhoto" alt="" (click)="file.click()">
+        <input accept="jpeg,jpg,png,gif" type="file" hidden #file (change)="onPhotoLoad($event)">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <h1>Add Party</h1> -->
+    </div>
+    <div class="col-md-6 flex justify-content-end">
+      Registration Date : {{CurrentDate|date}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 ">
+      <span class="p-float-label">
+        <input id="float-input" type="text" pInputText  [formControl]="txtItemCode">
+        <label for="float-input">Item Name</label>
+      </span>
+    </div>
+
+    <div class="col-md-4 ">
+
+    <p-dropdown (onChange)="uomChange()"   [options]="uomList" [(ngModel)]="selectedUomId" name="unitCode" optionLabel="unitCode" optionValue="id"></p-dropdown>
+
+      <!-- <span class="p-float-label">
+        <input id="float-input" type="text" pInputText formControlName="uomId">
+        <label for="float-input">UOM</label>
+      </span> -->
+    </div>
+    <div class="col-md-4 ">
+      <!-- <span class="p-float-label">
+           <input id="float-input" type="text" pInputText> 
+          <label for="float-input">Select Category</label> 
+        </span> -->
+      <p-treeSelect [showClear]="true" (onNodeSelect)="showmeResutls()" [(ngModel)]="selectedCategoryId" name="selectedCategoryId"  [options]="categoryList"
+        placeholder="Select Item"></p-treeSelect>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <textarea style="width: 100%;" placeholder="address" [rows]="5" [cols]="30" pInputTextarea 
+        [autoResize]="true" [formControl]="txtDescriptions"></textarea>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 flex justify-content-between">
+      <p-checkbox class="cursor-pointer" name="true" label="Serial Controlled" value="true" 
+        [(ngModel)]="serialControlled">
+      </p-checkbox>
+      <p-checkbox class="cursor-pointer" name="true" label="is Active" value="true"
+        [(ngModel)]="isActive">
+      </p-checkbox>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <br>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-12 flex justify-content-end">
+      <button (click)="closeDialog()" icon="pi pi-calendar" iconPos="right" pButton label="Cancel"
+        class="p-button-text p-button-danger"></button>
+      &nbsp;
+      <button [disabled]="isBtnDisable" (click)="saveItem()" [icon]="btnIcon" iconPos="right" pButton label="Save Party"
+        class="p-button-raised "></button>
+
+    </div>
+  </div>
+</div>
+</form>
